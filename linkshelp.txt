@@ -1,0 +1,8 @@
+
+
+
+
+https://developer.wordpress.org/reference/functions/wp_list_sort/
+https://developer.wordpress.org/reference/functions/wp_list_categories/
+https://developer.wordpress.org/reference/functions/wp_list_pages/
+https://developer.wordpress.org/reference/functions/wp_get_nav_menu_items/
