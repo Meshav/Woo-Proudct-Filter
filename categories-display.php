@@ -1,46 +1,12 @@
 
 <?php
 
-add_action( 'woocommerce_tester','woos_product_main_sub_categories',7);
-
-function woos_product_main_sub_categories() {
-	$args = array(
-		'taxonomy' => 'product_cat',
-		'hide_empty' => false,
-		'parent' => 0
-	);
-	$product_cat = get_terms( $args );
-	
-	foreach ($product_cat as $parent_product_cat)
-	{
-		echo '
-			<ul>
-				<li><a href="' .get_term_link($parent_product_cat->term_id).'">'.$parent_product_cat->name.'</a>
-			<ul>
-			';
-		$child_args = array(
-			'taxonomy' => 'product_cat',
-			'hide_empty' => false,
-			'parent' => $parent_product_cat->term_id
-		);
-		$child_product_cats = get_terms( $child_args );
-		foreach ($child_product_cats as $child_product_cat)
-		{
-			echo '<li><a href="' . get_term_link($child_product_cat->term_id) . '">' . $child_product_cat->name . '</a></li>';
-		}
-		
-		echo '</ul>
-			</li>
-			</ul>';
-	}
-}
-
 /****________________________________________________________________________________________________________________________________________________________****/
 
 
-/*_____________________________________________________________________________*/
-/**************************  **************************/
-/*___________________________________________________________________________*/
+/*__________________________________________________________________________________*/
+/************************** PRIMARY DISPLAYED CATEGORIES  **************************/
+/*________________________________________________________________________________*/
 
 add_action( 'woocommerce_tester','woos_product_main_sub_categories',7);
 
@@ -75,18 +41,14 @@ function woos_product_main_sub_categories() {
 			</ul>';
 	}
 }
-
-
-
-
-
 
 
 
 //=====================================================================================================================///
 
-/*_____________________________________________________________________________*/
-/**************************  **************************/
+/*______________________________________________________________________________*/
+/************************** THE CHANGING MENUS  ********************************/
+/* i.e. Main prods on start sub prods on 2nd.                                 */
 /*___________________________________________________________________________*/
 
 
@@ -149,7 +111,7 @@ if ( $terms ) {
 
 
 
-    
+
 
 
 
